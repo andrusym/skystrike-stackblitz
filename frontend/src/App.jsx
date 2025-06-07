@@ -1,4 +1,3 @@
-import React from 'react';
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
@@ -6,7 +5,7 @@ import LoginPage from "./LoginPage";
 import Dashboard from "./Dashboard";
 import Journal from "./Journal";
 import ProtectedRoute from "./ProtectedRoute";
-import { AuthProvider } from "./AuthContext";
+import { AuthProvider, useAuth } from "./AuthContext";
 
 const App = () => {
   return (
@@ -30,12 +29,23 @@ const App = () => {
               </ProtectedRoute>
             }
           />
-          {/* Catch-all route */}
-          <Route path="*" element={<Navigate to="/login" />} />
+          {/* Catch-all: Redirect to dashboard if logged in, else to login */}
+          <Route
+            path="*"
+            element={
+              <AuthRedirect />
+            }
+          />
         </Routes>
       </Router>
     </AuthProvider>
   );
+};
+
+// Helper component to handle unknown routes based on auth
+const AuthRedirect = () => {
+  const { user } = useAuth();
+  return <Navigate to={user ? "/dashboard" : "/login"} />;
 };
 
 export default App;
