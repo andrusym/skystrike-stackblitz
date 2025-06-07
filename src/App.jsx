@@ -6,14 +6,13 @@ import Journal from "./Journal";
 import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider, useAuth } from "./AuthContext";
 import Layout from "./components/Layout";
-import "./App.css";
 
 const AppRoutes = () => {
   const { user } = useAuth();
 
   return (
     <Routes>
-      <Route path="/login" element={<Layout><LoginPage /></Layout>} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/dashboard" element={<ProtectedRoute isAuthenticated={!!user}><Layout><Dashboard /></Layout></ProtectedRoute>} />
       <Route path="/journal" element={<ProtectedRoute isAuthenticated={!!user}><Layout><Journal /></Layout></ProtectedRoute>} />
       <Route path="*" element={<Navigate to="/login" replace />} />
