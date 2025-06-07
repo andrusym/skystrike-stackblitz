@@ -1,6 +1,6 @@
+// src/LoginPage.jsx
 import React, { useState } from "react";
 import { useAuth } from "./AuthContext";
-import "./App.css"; // Ensure it's imported
 
 const LoginPage = () => {
   const { login } = useAuth();
@@ -10,31 +10,32 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email && password) {
-      login({ email }); // Replace with real logic later
+      login({ email }); // simulate login
     }
   };
 
   return (
-    <div className="login-page">
-      <img src="/logo.png" alt="SkyStrike Logo" className="logo" /> {/* Optional logo */}
-      <h2>Login to SkyStrike</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit">Login</button>
-      </form>
+    <div className="login-container">
+      <div className="login-page">
+        <h2>Login to SkyStrike</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            value={email}
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            value={password}
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+      </div>
     </div>
   );
 };
