@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
-import logo from "../assets/skystrike-logo.png"; // Make sure the logo is here
+import lightLogo from "../assets/skystrike-logo-light.png";
+import darkLogo from "../assets/skystrike-logo-dark.png";
 
 const Layout = ({ children }) => {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme") || "light";
+    setTheme(storedTheme);
+    document.body.className = storedTheme;
+  }, []);
+
+  const logo = theme === "dark" ? darkLogo : lightLogo;
+
   return (
     <div className="layout">
       <header className="header">
         <img src={logo} alt="SkyStrike Logo" className="logo" />
-        <ThemeToggle />
+        <ThemeToggle onChangeTheme={setTheme} />
       </header>
       <main>{children}</main>
     </div>
