@@ -1,5 +1,5 @@
 import TradeJournalEditor from './components/TradeJournalEditor';
-
+import React from 'react';
 const Date = window.Date;
 import React, { useState } from "react";
 
