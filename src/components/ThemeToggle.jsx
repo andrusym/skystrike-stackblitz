@@ -1,4 +1,3 @@
-// src/components/ThemeToggle.jsx
 import React, { useEffect, useState } from "react";
 
 export const ThemeToggle = ({ onChangeTheme }) => {
@@ -10,10 +9,8 @@ export const ThemeToggle = ({ onChangeTheme }) => {
     if (onChangeTheme) onChangeTheme(theme);
   }, [theme, onChangeTheme]);
 
-  const toggle = () => setTheme(prev => (prev === "light" ? "dark" : "light"));
-
   return (
-    <button className="theme-toggle" onClick={toggle}>
+    <button className="theme-toggle" onClick={() => setTheme(t => t === "light" ? "dark" : "light")}>
       {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
     </button>
   );

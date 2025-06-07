@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import lightLogo from "../assets/skystrike-logo-light.png";
 import darkLogo from "../assets/skystrike-logo-dark.png";
@@ -19,9 +19,7 @@ const Layout = ({ children }) => {
         <img src={logo} alt="SkyStrike Logo" className="header-logo" />
         <ThemeToggle onChangeTheme={setTheme} />
       </header>
-      <main className="layout-main">
-        {children}
-      </main>
+      <main className="layout-main">{children}</main>
     </div>
   );
 };
