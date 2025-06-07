@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+// src/components/Layout.jsx
+import React, { useState, useEffect } from "react";
 import { ThemeToggle } from "./ThemeToggle";
 import lightLogo from "../assets/skystrike-logo-light.png";
 import darkLogo from "../assets/skystrike-logo-dark.png";
