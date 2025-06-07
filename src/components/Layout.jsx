@@ -4,13 +4,11 @@ import lightLogo from "../assets/skystrike-logo-light.png";
 import darkLogo from "../assets/skystrike-logo-dark.png";
 
 const Layout = ({ children }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") || "light";
-    setTheme(storedTheme);
-    document.body.className = storedTheme;
-  }, []);
+    document.body.className = theme;
+  }, [theme]);
 
   const logo = theme === "dark" ? darkLogo : lightLogo;
 
