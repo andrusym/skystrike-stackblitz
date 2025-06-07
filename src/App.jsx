@@ -1,4 +1,3 @@
-import React from 'react';
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
@@ -6,7 +5,8 @@ import LoginPage from "./LoginPage";
 import Dashboard from "./Dashboard";
 import Journal from "./Journal";
 import ProtectedRoute from "./ProtectedRoute";
-import { AuthProvider } from "./AuthContext";
+import { AuthProvider, useAuth } from "./AuthContext";
+
 
 const App = () => {
   return (
