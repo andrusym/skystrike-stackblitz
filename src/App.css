@@ -1,12 +1,3 @@
-/* Core HTML setup */
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* Theme Modes */
 body.light {
   background: #f5f5f5;
   color: #111;
@@ -17,51 +8,55 @@ body.dark {
   color: #eee;
 }
 
-/* Wrapper for all content */
 .app-container {
+  font-family: sans-serif;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 20px;
-  background: inherit;
+  flex-direction: column;
 }
 
-/* Layout Header */
-.layout {
-  padding: 20px;
-}
-
-.header {
+.layout-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ccc;
 }
 
 .logo {
   height: 60px;
 }
 
-/* Theme toggle button */
 .theme-toggle {
-  background: none;
-  border: none;
   font-size: 14px;
+  padding: 6px 12px;
   cursor: pointer;
+  background: transparent;
+  border: 1px solid #888;
+  border-radius: 4px;
   color: inherit;
-  padding: 4px 8px;
 }
 
-/* Login form */
+.layout-main {
+  flex: 1;
+  padding: 20px;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+
 .login-page {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 100%;
   max-width: 400px;
-  text-align: center;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 body.dark .login-page {
@@ -70,60 +65,31 @@ body.dark .login-page {
   border: 1px solid #444;
 }
 
-/* Form Elements */
 .login-page input {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   margin: 10px 0;
+  border-radius: 4px;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
+}
+
+body.dark .login-page input {
+  background: #333;
+  color: #eee;
+  border: 1px solid #555;
 }
 
 .login-page button {
   width: 100%;
-  padding: 12px;
-  background-color: #1a73e8;
+  padding: 10px;
+  background: #007aff;
   color: white;
-  font-weight: bold;
   border: none;
-  border-radius: 6px;
-  font-size: 14px;
+  border-radius: 4px;
+  margin-top: 10px;
   cursor: pointer;
 }
 
 .login-page button:hover {
-  background-color: #0f5bd1;
-}
-
-/* Dashboard and Card Elements */
-.card-container {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.card {
-  padding: 12px;
-  border: 1px solid #aaa;
-  background: white;
-  min-width: 120px;
-  color: black;
-  border-radius: 8px;
-  text-align: center;
-}
-
-body.dark .card {
-  background: #222;
-  color: #eee;
-  border-color: #444;
-}
-
-.panel {
-  margin-top: 20px;
-}
-
-.summary {
-  margin-top: 10px;
+  background: #005bb5;
 }
