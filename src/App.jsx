@@ -7,7 +7,6 @@ import Journal from "./Journal";
 import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider, useAuth } from "./AuthContext";
 
-
 const App = () => {
   return (
     <AuthProvider>
@@ -30,12 +29,16 @@ const App = () => {
               </ProtectedRoute>
             }
           />
-          {/* Catch-all route */}
-          <Route path="*" element={<Navigate to="/login" />} />
+          <Route path="*" element={<RedirectByAuth />} />
         </Routes>
       </Router>
     </AuthProvider>
   );
+};
+
+const RedirectByAuth = () => {
+  const { user } = useAuth();
+  return <Navigate to={user ? "/dashboard" : "/login"} />;
 };
 
 export default App;
