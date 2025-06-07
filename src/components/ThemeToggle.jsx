@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-export const ThemeToggle = () => {
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "light";
-  });
+export const ThemeToggle = ({ onChangeTheme }) => {
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
 
   useEffect(() => {
     document.body.className = theme;
     localStorage.setItem("theme", theme);
-  }, [theme]);
+    onChangeTheme?.(theme); // notify parent (Layout)
+  }, [theme, onChangeTheme]);
 
   const toggleTheme = () => {
     setTheme(prev => (prev === "light" ? "dark" : "light"));
