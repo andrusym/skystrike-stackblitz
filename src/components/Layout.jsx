@@ -9,17 +9,20 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     document.body.className = theme;
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const logo = theme === "dark" ? darkLogo : lightLogo;
 
   return (
-    <div className="layout">
-      <header className="header">
+    <div className="app-container">
+      <header className="layout-header">
         <img src={logo} alt="SkyStrike Logo" className="logo" />
         <ThemeToggle onChangeTheme={setTheme} />
       </header>
-      <main>{children}</main>
+      <main className="layout-main">
+        {children}
+      </main>
     </div>
   );
 };
