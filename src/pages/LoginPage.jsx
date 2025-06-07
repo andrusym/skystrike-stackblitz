@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 import { useTheme } from '../ThemeContext';
@@ -8,43 +8,20 @@ const LoginPage = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    login(email, password);
+  const handleLogin = () => {
+    login(); // your login logic from context
     navigate('/dashboard');
   };
 
   return (
     <div className={`login-page ${theme}`}>
-      <button className="theme-toggle" onClick={toggleTheme}>
-        Toggle Theme
-      </button>
+      <div className="theme-toggle">
+        <button onClick={toggleTheme}>Toggle Theme</button>
+      </div>
       <div className="login-container">
-        <img
-          src={theme === 'dark' ? '/skystrike-logo-dark.png' : '/skystrike-logo-light.png'}
-          alt="SkyStrike Logo"
-          className="login-logo"
-        />
-        <form className="login-form" onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit">Login</button>
-        </form>
+        <h2>Welcome to SkyStrike</h2>
+        <button onClick={handleLogin}>Sign In</button>
       </div>
     </div>
   );
