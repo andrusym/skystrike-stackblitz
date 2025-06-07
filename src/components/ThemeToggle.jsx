@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const ThemeToggle = ({ onChangeTheme }) => {
   const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
@@ -6,15 +6,11 @@ export const ThemeToggle = ({ onChangeTheme }) => {
   useEffect(() => {
     document.body.className = theme;
     localStorage.setItem("theme", theme);
-    onChangeTheme?.(theme); // notify parent (Layout)
+    if (onChangeTheme) onChangeTheme(theme);
   }, [theme, onChangeTheme]);
 
-  const toggleTheme = () => {
-    setTheme(prev => (prev === "light" ? "dark" : "light"));
-  };
-
   return (
-    <button onClick={toggleTheme} className="theme-toggle">
+    <button onClick={() => setTheme(t => (t === "light" ? "dark" : "light"))} className="theme-toggle">
       {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
     </button>
   );
