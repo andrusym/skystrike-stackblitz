@@ -1,3 +1,12 @@
+/* Core HTML setup */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Theme Modes */
 body.light {
   background: #f5f5f5;
   color: #111;
@@ -8,24 +17,86 @@ body.dark {
   color: #eee;
 }
 
+/* Wrapper for all content */
 .app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   padding: 20px;
-  font-family: sans-serif;
-  text-align: center;
+  background: inherit;
 }
 
-.logo {
-  height: 60px;
-  margin: 10px 0;
+/* Layout Header */
+.layout {
+  padding: 20px;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  margin-bottom: 30px;
 }
 
+.logo {
+  height: 60px;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: inherit;
+  padding: 4px 8px;
+}
+
+/* Login form */
+.login-page {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+body.dark .login-page {
+  background: #222;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+/* Form Elements */
+.login-page input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.login-page button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1a73e8;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-page button:hover {
+  background-color: #0f5bd1;
+}
+
+/* Dashboard and Card Elements */
 .card-container {
   display: flex;
   justify-content: center;
@@ -39,6 +110,8 @@ body.dark {
   background: white;
   min-width: 120px;
   color: black;
+  border-radius: 8px;
+  text-align: center;
 }
 
 body.dark .card {
@@ -47,26 +120,10 @@ body.dark .card {
   border-color: #444;
 }
 
-.theme-toggle {
-  background: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  color: inherit;
-  margin-right: 10px;
+.panel {
+  margin-top: 20px;
 }
 
-.login-page {
-  max-width: 400px;
-  margin: 60px auto;
-  padding: 20px;
-  border-radius: 8px;
-  background: white;
-  text-align: center;
-}
-
-body.dark .login-page {
-  background: #222;
-  color: #eee;
-  border: 1px solid #444;
+.summary {
+  margin-top: 10px;
 }
