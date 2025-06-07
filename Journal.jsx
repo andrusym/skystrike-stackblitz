@@ -15,7 +15,6 @@ const Journal = () => {
   };
 
   return (
-  <div className="app-container">
     <div className="journal">
       <h2>Trade Journal</h2>
       <textarea value={note} onChange={(e) => setNote(e.target.value)} placeholder="Enter your trade notes..." />
@@ -28,9 +27,7 @@ const Journal = () => {
         ))}
       </ul>
     </div>
-  
-  </div>
-);
+  );
 };
 
 export default Journal;

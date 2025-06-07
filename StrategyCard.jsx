@@ -4,16 +4,13 @@ import React from "react";
 
 const StrategyCard = ({ strategy }) => {
   return (
-  <div className="app-container">
     <div className="strategy-card">
       <h2>{strategy.name}</h2>
       <p>Status: {strategy.status}</p>
       <p>Contracts: {strategy.contracts}</p>
       <p>P&L: ${strategy.pnl}</p>
     </div>
-  
-  </div>
-);
+  );
 };
 
 
@@ -26,7 +23,6 @@ const mockBacktest = {
 };
 
 return (
-  <div className="app-container">
   <div className="strategy-card">
     <StrategyScoreOverlay score={mockScore} />
     <BacktestOverlay stats={mockBacktest} visible={true} />

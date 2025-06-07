@@ -10,13 +10,10 @@ export const TradeProvider = ({ children }) => {
   const clearTrades = () => setTrades([]);
 
   return (
-  <div className="app-container">
     <TradeContext.Provider value={{ trades, addTrade, clearTrades }}>
       {children}
     </TradeContext.Provider>
-  
-  </div>
-);
+  );
 };
 
 export const useTrade = () => useContext(TradeContext);

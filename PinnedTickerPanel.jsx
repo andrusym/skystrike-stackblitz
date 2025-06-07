@@ -2,7 +2,6 @@ import React from "react";
 
 const PinnedTickerPanel = ({ tickers }) => {
   return (
-  <div className="app-container">
     <aside className="pinned-ticker-panel">
       <h4>Watchlist</h4>
       <ul>
@@ -13,9 +12,7 @@ const PinnedTickerPanel = ({ tickers }) => {
         ))}
       </ul>
     </aside>
-  
-  </div>
-);
+  );
 };
 
 export default PinnedTickerPanel;

@@ -14,7 +14,6 @@ const LoginPage = () => {
   };
 
   return (
-  <div className="app-container">
     <div className="login-page">
       <h2>Login to SkyStrike</h2>
       <form onSubmit={handleSubmit}>
@@ -23,9 +22,7 @@ const LoginPage = () => {
         <button type="submit">Login</button>
       </form>
     </div>
-  
-  </div>
-);
+  );
 };
 
 export default LoginPage;

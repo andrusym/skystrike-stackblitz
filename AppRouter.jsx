@@ -25,7 +25,6 @@ function AppRouter() {
   }
 
   return (
-  <div className="app-container">
     <Router>
       <Routes>
         <Route path='/settings/config' element={<ConfigPanel settings={[]} onChange={() => {}} />} />
@@ -49,9 +48,7 @@ function AppRouter() {
         <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
       </Routes>
     </Router>
-  
-  </div>
-);
+  );
 }
 
 export default AppRouter;

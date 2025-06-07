@@ -9,13 +9,10 @@ export const StrategyProvider = ({ children }) => {
   const updateStrategies = (newStrategies) => setStrategies(newStrategies);
 
   return (
-  <div className="app-container">
     <StrategyContext.Provider value={{ strategies, updateStrategies }}>
       {children}
     </StrategyContext.Provider>
-  
-  </div>
-);
+  );
 };
 
 export const useStrategy = () => useContext(StrategyContext);

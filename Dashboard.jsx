@@ -4,14 +4,11 @@ import React from "react";
 
 const Dashboard = () => {
   return (
-  <div className="app-container">
     <div className="dashboard">
       <h1>SkyStrike Dashboard</h1>
       {/* Add strategy cards, performance summary, and widgets here */}
     </div>
-  
-  </div>
-);
+  );
 };
 
 export default Dashboard;
