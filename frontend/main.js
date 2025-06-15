@@ -1,0 +1,1 @@
+// JS bundle placeholder

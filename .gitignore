@@ -1,0 +1,10 @@
+__pycache__/
+node_modules/
+.env*
+dist/
+*.zip
+*.log
+*.tar.gz
+venv/
+skystrike_api_bundle*
+skystrike_final_release/

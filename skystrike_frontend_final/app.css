@@ -1,0 +1,93 @@
+/* Core Layout */
+.page-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 16px;
+}
+
+/* Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.data-table thead {
+  background-color: #f0f0f0;
+}
+
+[data-theme="dark"] .data-table thead {
+  background-color: #2c2c2c;
+}
+
+.data-table th, .data-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.data-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+[data-theme="dark"] .data-table tr:hover {
+  background-color: #333;
+}
+
+/* Inputs & Buttons */
+input[type="number"],
+input[type="text"],
+select {
+  padding: 8px;
+  margin: 6px 0 12px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  color: black;
+}
+
+[data-theme="dark"] input {
+  background-color: #1e1e1e;
+  color: #eee;
+  border-color: #555;
+}
+
+button {
+  padding: 8px 16px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #2e6ad9;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #1f4db8;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* P&L Coloring */
+.pnl-positive {
+  color: green;
+  font-weight: bold;
+}
+
+.pnl-negative {
+  color: red;
+  font-weight: bold;
+}

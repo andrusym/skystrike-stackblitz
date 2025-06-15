@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    restart: always
+    expose:
+      - "4173"
+    environment:
+      - NODE_ENV=production
+
+  backend:
+    build: ./backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=production
+      - TRADIER_KEY=${TRADIER_KEY}
+      - DATABASE_URL=${DATABASE_URL}
